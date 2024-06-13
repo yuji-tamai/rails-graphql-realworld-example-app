@@ -28,6 +28,9 @@ class Types::QueryType < GraphQL::Schema::Object
     argument :slug, String, required: true
   end
   def article(slug:)
+    #### timeoutさせるtest
+    #sleep 5
+
     Article.friendly.find(slug)
   end
 
